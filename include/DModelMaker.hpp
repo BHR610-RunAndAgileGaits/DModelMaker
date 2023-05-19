@@ -529,6 +529,11 @@ private:
             __Tab __Tab __LineIn2("force name = \"%s\" site = \"%s\" cutoff = \"2000.0\"", Info.jointName[1], Info.jointName[0])
             __Tab __Tab __LineIn2("torque name = \"%s\" site = \"%s\" cutoff = \"2000.0\"", Info.jointName[2], Info.jointName[0])
         }
+        if(Info.hasIMU)
+        {
+            __Tab __Tab __LineIn2("gyro name = \"%s_gyro\" site = \"%s\" ", Info.IMUName, Info.IMUName)
+            __Tab __Tab __LineIn2("accelerometer  name = \"%s_acc\" site = \"%s\" ", Info.IMUName, Info.IMUName)
+        }
     }
 
     void fnvWriteActuator(int nJointNum) {
