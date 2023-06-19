@@ -351,7 +351,7 @@ public:
         Info.blockNo = this->m_nBlockNum;
         this->m_nBlockNum++;
         strcpy(Info.blockName, "block_");
-        strcat(Info.blockName, ("0" + Info.blockNo));
+        strcat(Info.blockName,  _STD to_string(Info.blockNo).c_str());
         Info.Mass = dMass;
         for(int i = 0; i < 3; i++) Info.geom[i] = d3Geom[i], Info.pos[i] = d3Pos[i], Info.rot[i] = d3Euler[i];
         Info.Iner[0] = dMass * (d3Geom[1] * d3Geom[1] + d3Geom[2] * d3Geom[2]) / 12.0;
